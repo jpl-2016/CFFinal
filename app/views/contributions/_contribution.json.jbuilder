@@ -1,0 +1,2 @@
+json.extract! contribution, :id, :campaign_finance_info_id, :contribution_type_id, :entity_id, :date, :amount, :description, :isoutofstatepac, :pacid, :istraveloutsideoftx, :created_at, :updated_at
+json.url contribution_url(contribution, format: :json)

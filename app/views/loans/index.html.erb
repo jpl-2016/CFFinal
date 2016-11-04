@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Loans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campaign finance info</th>
+      <th>Entity</th>
+      <th>Date</th>
+      <th>Isfinancialinstitution</th>
+      <th>Isoutofstatepac</th>
+      <th>Pacid</th>
+      <th>Amount</th>
+      <th>Interestrate</th>
+      <th>Maturitydate</th>
+      <th>Collateraldescription</th>
+      <th>Ispersonalfunddeposit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td><%= loan.campaign_finance_info_id %></td>
+        <td><%= loan.entity_id %></td>
+        <td><%= loan.date %></td>
+        <td><%= loan.isfinancialinstitution %></td>
+        <td><%= loan.isoutofstatepac %></td>
+        <td><%= loan.pacid %></td>
+        <td><%= loan.amount %></td>
+        <td><%= loan.interestrate %></td>
+        <td><%= loan.maturitydate %></td>
+        <td><%= loan.collateraldescription %></td>
+        <td><%= loan.ispersonalfunddeposit %></td>
+        <td><%= link_to 'Show', loan %></td>
+        <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
+        <td><%= link_to 'Destroy', loan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Loan', new_loan_path %>

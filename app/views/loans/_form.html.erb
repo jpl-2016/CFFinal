@@ -1,0 +1,61 @@
+<%= form_for(@loan) do |f| %>
+  <% if @loan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loan.errors.count, "error") %> prohibited this loan from being saved:</h2>
+
+      <ul>
+      <% @loan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :campaign_finance_info_id %><br>
+    <%= f.number_field :campaign_finance_info_id %>
+  </div>
+  <div class="field">
+    <%= f.label :entity_id %><br>
+    <%= f.number_field :entity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :isfinancialinstitution %><br>
+    <%= f.check_box :isfinancialinstitution %>
+  </div>
+  <div class="field">
+    <%= f.label :isoutofstatepac %><br>
+    <%= f.check_box :isoutofstatepac %>
+  </div>
+  <div class="field">
+    <%= f.label :pacid %><br>
+    <%= f.text_field :pacid %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :interestrate %><br>
+    <%= f.text_field :interestrate %>
+  </div>
+  <div class="field">
+    <%= f.label :maturitydate %><br>
+    <%= f.date_select :maturitydate %>
+  </div>
+  <div class="field">
+    <%= f.label :collateraldescription %><br>
+    <%= f.text_area :collateraldescription %>
+  </div>
+  <div class="field">
+    <%= f.label :ispersonalfunddeposit %><br>
+    <%= f.check_box :ispersonalfunddeposit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

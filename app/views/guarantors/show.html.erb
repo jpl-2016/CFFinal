@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Loan:</strong>
+  <%= @guarantor.loan_id %>
+</p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @guarantor.entity_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @guarantor.amount %>
+</p>
+
+<%= link_to 'Edit', edit_guarantor_path(@guarantor) %> |
+<%= link_to 'Back', guarantors_path %>

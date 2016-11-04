@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contributions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Campaign finance info</th>
+      <th>Contribution type</th>
+      <th>Entity</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Isoutofstatepac</th>
+      <th>Pacid</th>
+      <th>Istraveloutsideoftx</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contributions.each do |contribution| %>
+      <tr>
+        <td><%= contribution.campaign_finance_info_id %></td>
+        <td><%= contribution.contribution_type_id %></td>
+        <td><%= contribution.entity_id %></td>
+        <td><%= contribution.date %></td>
+        <td><%= contribution.amount %></td>
+        <td><%= contribution.description %></td>
+        <td><%= contribution.isoutofstatepac %></td>
+        <td><%= contribution.pacid %></td>
+        <td><%= contribution.istraveloutsideoftx %></td>
+        <td><%= link_to 'Show', contribution %></td>
+        <td><%= link_to 'Edit', edit_contribution_path(contribution) %></td>
+        <td><%= link_to 'Destroy', contribution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contribution', new_contribution_path %>

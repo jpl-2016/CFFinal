@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign finance info:</strong>
+  <%= @contribution.campaign_finance_info_id %>
+</p>
+
+<p>
+  <strong>Contribution type:</strong>
+  <%= @contribution.contribution_type_id %>
+</p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @contribution.entity_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @contribution.date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @contribution.amount %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @contribution.description %>
+</p>
+
+<p>
+  <strong>Isoutofstatepac:</strong>
+  <%= @contribution.isoutofstatepac %>
+</p>
+
+<p>
+  <strong>Pacid:</strong>
+  <%= @contribution.pacid %>
+</p>
+
+<p>
+  <strong>Istraveloutsideoftx:</strong>
+  <%= @contribution.istraveloutsideoftx %>
+</p>
+
+<%= link_to 'Edit', edit_contribution_path(@contribution) %> |
+<%= link_to 'Back', contributions_path %>

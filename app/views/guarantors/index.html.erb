@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Guarantors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loan</th>
+      <th>Entity</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guarantors.each do |guarantor| %>
+      <tr>
+        <td><%= guarantor.loan_id %></td>
+        <td><%= guarantor.entity_id %></td>
+        <td><%= guarantor.amount %></td>
+        <td><%= link_to 'Show', guarantor %></td>
+        <td><%= link_to 'Edit', edit_guarantor_path(guarantor) %></td>
+        <td><%= link_to 'Destroy', guarantor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guarantor', new_guarantor_path %>

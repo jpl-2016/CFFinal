@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  filer_id: 1
+  report_type_id: 1
+  candidate_id: 1
+  treasurer_id: 1
+  election_type_id: 1
+  submitdate: 2016-11-03
+  filename: MyString
+  campaignyear: MyString
+  ontime: false
+  periodbegin: 2016-11-03
+  periodend: 2016-11-03
+  electiondate: 2016-11-03
+
+two:
+  filer_id: 1
+  report_type_id: 1
+  candidate_id: 1
+  treasurer_id: 1
+  election_type_id: 1
+  submitdate: 2016-11-03
+  filename: MyString
+  campaignyear: MyString
+  ontime: false
+  periodbegin: 2016-11-03
+  periodend: 2016-11-03
+  electiondate: 2016-11-03

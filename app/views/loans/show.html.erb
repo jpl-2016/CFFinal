@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign finance info:</strong>
+  <%= @loan.campaign_finance_info_id %>
+</p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @loan.entity_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @loan.date %>
+</p>
+
+<p>
+  <strong>Isfinancialinstitution:</strong>
+  <%= @loan.isfinancialinstitution %>
+</p>
+
+<p>
+  <strong>Isoutofstatepac:</strong>
+  <%= @loan.isoutofstatepac %>
+</p>
+
+<p>
+  <strong>Pacid:</strong>
+  <%= @loan.pacid %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @loan.amount %>
+</p>
+
+<p>
+  <strong>Interestrate:</strong>
+  <%= @loan.interestrate %>
+</p>
+
+<p>
+  <strong>Maturitydate:</strong>
+  <%= @loan.maturitydate %>
+</p>
+
+<p>
+  <strong>Collateraldescription:</strong>
+  <%= @loan.collateraldescription %>
+</p>
+
+<p>
+  <strong>Ispersonalfunddeposit:</strong>
+  <%= @loan.ispersonalfunddeposit %>
+</p>
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expenditure_id: 1
+  cohpayment_id: 1
+  contribution: MyString
+
+two:
+  expenditure_id: 1
+  cohpayment_id: 1
+  contribution: MyString

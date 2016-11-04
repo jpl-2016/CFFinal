@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign finance info:</strong>
+  <%= @coh_payment.campaign_finance_info_id %>
+</p>
+
+<p>
+  <strong>Entity:</strong>
+  <%= @coh_payment.entity_id %>
+</p>
+
+<p>
+  <strong>Expend category:</strong>
+  <%= @coh_payment.expend_category_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @coh_payment.date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @coh_payment.amount %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @coh_payment.description %>
+</p>
+
+<p>
+  <strong>Istraveloutsideoftx:</strong>
+  <%= @coh_payment.istraveloutsideoftx %>
+</p>
+
+<p>
+  <strong>Isaustintxlivingexpense:</strong>
+  <%= @coh_payment.isaustintxlivingexpense %>
+</p>
+
+<p>
+  <strong>Isbenefitcoh:</strong>
+  <%= @coh_payment.isbenefitcoh %>
+</p>
+
+<%= link_to 'Edit', edit_coh_payment_path(@coh_payment) %> |
+<%= link_to 'Back', coh_payments_path %>

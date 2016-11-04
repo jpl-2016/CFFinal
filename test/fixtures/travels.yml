@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campaign_finance_info_id: 1
+  travel_schedule_id: 1
+  travelbegin: 2016-11-03
+  travelend: 2016-11-03
+  departureloc: MyString
+  destinationloc: MyString
+  transportation: MyString
+  purpose: MyString
+
+two:
+  campaign_finance_info_id: 1
+  travel_schedule_id: 1
+  travelbegin: 2016-11-03
+  travelend: 2016-11-03
+  departureloc: MyString
+  destinationloc: MyString
+  transportation: MyString
+  purpose: MyString

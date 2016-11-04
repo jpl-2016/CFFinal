@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expenditure:</strong>
+  <%= @travel_schedule.expenditure_id %>
+</p>
+
+<p>
+  <strong>Cohpayment:</strong>
+  <%= @travel_schedule.cohpayment_id %>
+</p>
+
+<p>
+  <strong>Contribution:</strong>
+  <%= @travel_schedule.contribution %>
+</p>
+
+<%= link_to 'Edit', edit_travel_schedule_path(@travel_schedule) %> |
+<%= link_to 'Back', travel_schedules_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Treasurer:</strong>
+  <%= @committee.treasurer_id %>
+</p>
+
+<p>
+  <strong>Committee type:</strong>
+  <%= @committee.committee_type_id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @committee.address_id %>
+</p>
+
+<p>
+  <strong>Committeename:</strong>
+  <%= @committee.committeename %>
+</p>
+
+<%= link_to 'Edit', edit_committee_path(@committee) %> |
+<%= link_to 'Back', committees_path %>

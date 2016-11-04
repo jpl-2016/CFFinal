@@ -1,0 +1,2 @@
+json.extract! expenditure, :id, :campaign_finance_info_id, :entity_id, :expend_type_id, :expend_category_id, :payment_method_id, :date, :amount, :description, :istraveloutsideoftx, :isaustintxlivingexpense, :isbenefitcoh, :isreimbursementintended, :created_at, :updated_at
+json.url expenditure_url(expenditure, format: :json)

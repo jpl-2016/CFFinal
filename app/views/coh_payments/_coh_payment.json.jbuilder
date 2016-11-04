@@ -1,0 +1,2 @@
+json.extract! coh_payment, :id, :campaign_finance_info_id, :entity_id, :expend_category_id, :date, :amount, :description, :istraveloutsideoftx, :isaustintxlivingexpense, :isbenefitcoh, :created_at, :updated_at
+json.url coh_payment_url(coh_payment, format: :json)

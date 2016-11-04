@@ -1,0 +1,65 @@
+<%= form_for(@expenditure) do |f| %>
+  <% if @expenditure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
+
+      <ul>
+      <% @expenditure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :campaign_finance_info_id %><br>
+    <%= f.number_field :campaign_finance_info_id %>
+  </div>
+  <div class="field">
+    <%= f.label :entity_id %><br>
+    <%= f.number_field :entity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expend_type_id %><br>
+    <%= f.number_field :expend_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :expend_category_id %><br>
+    <%= f.number_field :expend_category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_method_id %><br>
+    <%= f.number_field :payment_method_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :istraveloutsideoftx %><br>
+    <%= f.check_box :istraveloutsideoftx %>
+  </div>
+  <div class="field">
+    <%= f.label :isaustintxlivingexpense %><br>
+    <%= f.check_box :isaustintxlivingexpense %>
+  </div>
+  <div class="field">
+    <%= f.label :isbenefitcoh %><br>
+    <%= f.check_box :isbenefitcoh %>
+  </div>
+  <div class="field">
+    <%= f.label :isreimbursementintended %><br>
+    <%= f.check_box :isreimbursementintended %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

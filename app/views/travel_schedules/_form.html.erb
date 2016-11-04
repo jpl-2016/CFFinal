@@ -1,0 +1,29 @@
+<%= form_for(@travel_schedule) do |f| %>
+  <% if @travel_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@travel_schedule.errors.count, "error") %> prohibited this travel_schedule from being saved:</h2>
+
+      <ul>
+      <% @travel_schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expenditure_id %><br>
+    <%= f.number_field :expenditure_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cohpayment_id %><br>
+    <%= f.number_field :cohpayment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contribution %><br>
+    <%= f.text_field :contribution %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
