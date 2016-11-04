@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :prefix_id %><br>
-    <%= f.number_field :prefix_id %>
+    <%= f.collection_select :prefix_id, Prefix.all, :id, :prefix%>
   </div>
   <div class="field">
     <%= f.label :office_held_id %><br>
-    <%= f.collection_select :office_held_id, OfficeHeld.all, :id, :category%>
+    <%= f.collection_select :office_held_id, OfficeHeld.all, :id, :category %>
   </div>
   <div class="field">
     <%= f.label :office_sought_id %><br>

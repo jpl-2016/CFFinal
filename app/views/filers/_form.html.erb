@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :filer_type_id %><br>
-    <%= f.number_field :filer_type_id %>
+    <%= f.collection_select :filer_type_id, FilerType.all, :id, :type %>
   </div>
   <div class="field">
     <%= f.label :address_id %><br>
@@ -57,11 +57,11 @@
   </div>
   <div class="field">
     <%= f.label :office_held_id %><br>
-    <%= f.number_field :office_held_id %>
+    <%= f.collection_select :office_held_id, OfficeHeld.all, :id, :category %>
   </div>
   <div class="field">
     <%= f.label :office_sougth_id %><br>
-    <%= f.number_field :office_sougth_id %>
+    <%= f.collection_select :office_sought_id, OfficeSought.all, :id, :category %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :prefix_id %><br>
-    <%= f.number_field :prefix_id %>
+    <%= f.collection_select :prefix_id, Prefix.all, :id, :prefix %>
   </div>
   <div class="field">
     <%= f.label :address_id %><br>
