@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104031020) do
+ActiveRecord::Schema.define(version: 20161104192620) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "state_id",      limit: 4
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20161104031020) do
   end
 
   create_table "contribution_types", force: :cascade do |t|
-    t.string   "type",       limit: 4000
+    t.string   "contype",    limit: 4000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20161104031020) do
   end
 
   create_table "election_types", force: :cascade do |t|
-    t.string   "type",       limit: 4000
+    t.string   "ectype",     limit: 4000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20161104031020) do
   end
 
   create_table "expend_types", force: :cascade do |t|
-    t.string   "type",       limit: 4000
+    t.string   "extype",     limit: 4000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -181,7 +181,7 @@ ActiveRecord::Schema.define(version: 20161104031020) do
   end
 
   create_table "filer_types", force: :cascade do |t|
-    t.string   "type",       limit: 4000
+    t.string   "ftype",      limit: 4000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -263,7 +263,7 @@ ActiveRecord::Schema.define(version: 20161104031020) do
   end
 
   create_table "report_types", force: :cascade do |t|
-    t.string   "type",       limit: 4000
+    t.string   "rtype",      limit: 4000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
