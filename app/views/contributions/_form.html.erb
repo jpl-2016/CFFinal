@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :contribution_type_id %><br>
-    <%= f.number_field :contribution_type_id %>
+    <%= f.collection_select :contribution_type_id, ContributionType.all, :id, :type %>
   </div>
   <div class="field">
     <%= f.label :entity_id %><br>

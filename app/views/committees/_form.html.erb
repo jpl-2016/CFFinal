@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :committee_type_id %><br>
-    <%= f.number_field :committee_type_id %>
+    <%= f.collection_select :committee_type_id, CommitteeType.all, :id, :committeetype %>
   </div>
   <div class="field">
     <%= f.label :address_id %><br>

@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :election_type_id %><br>
-    <%= f.number_field :election_type_id %>
+    <%= f.collection_select :election_type_id, ElectionType.all, :id, :type %>
   </div>
   <div class="field">
     <%= f.label :submitdate %><br>
