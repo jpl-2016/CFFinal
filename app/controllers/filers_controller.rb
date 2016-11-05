@@ -69,6 +69,6 @@ class FilersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def filer_params
-      params.require(:filer).permit(:filer_type_id, :address_id, :firstname, :mi, :lastname, :phone, :ext, :releasepassword, :releasepasswordto, :emailpasswordto, :signature, :office_held_id, :office_sougth_id)
+      params.require(:filer).permit(:filer_type_id, :address_id, :firstname, :mi, :lastname, :phone, :ext, :releasepassword, :releasepasswordto, :emailpasswordto, :signature, :office_held_id, :office_sought_id)
     end
 end

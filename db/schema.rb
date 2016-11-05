@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104192620) do
+ActiveRecord::Schema.define(version: 20161105194254) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "state_id",      limit: 4
@@ -199,7 +199,7 @@ ActiveRecord::Schema.define(version: 20161104192620) do
     t.string   "emailpasswordto",   limit: 4000
     t.boolean  "signature"
     t.integer  "office_held_id",    limit: 4
-    t.integer  "office_sougth_id",  limit: 4
+    t.integer  "office_sought_id",  limit: 4
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
