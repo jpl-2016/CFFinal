@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :filer_id %><br>
-    <%= f.number_field :filer_id %>
+    <%= f.collection_select :filer_id, Filer.all, :id, :firstname %>
   </div>
   <div class="field">
     <%= f.label :report_type_id %><br>
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :election_type_id %><br>
-    <%= f.collection_select :election_type_id, ElectionType.all, :id, :type %>
+    <%= f.collection_select :election_type_id, ElectionType.all, :id, :ectype %>
   </div>
   <div class="field">
     <%= f.label :submitdate %><br>
@@ -59,6 +59,14 @@
     <%= f.label :electiondate %><br>
     <%= f.date_select :electiondate %>
   </div>
+
+    <%= f.fields_for :contributions do |builder| %>
+    <fieldset>
+      <%= builder.label :content, "Contribution" %><br />
+      <%= builder.text_area :content %>
+    </fieldset>
+    <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

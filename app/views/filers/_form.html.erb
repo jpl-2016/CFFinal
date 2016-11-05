@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :filer_type_id %><br>
-    <%= f.collection_select :filer_type_id, FilerType.all, :id, :type %>
+    <%= f.collection_select :filer_type_id, FilerType.all, :id, :ftype %>
   </div>
   <div class="field">
     <%= f.label :address_id %><br>

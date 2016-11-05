@@ -60,5 +60,14 @@
   <%= @campaign_finance_info.electiondate %>
 </p>
 
+<% if @campaign_finance_info.contributions.present? %>
+<h4>Contributions</h4>
+<% @campaign_finance_info.contributions.each do |contribution| %>
+  <p><%= contribution.date %></p>
+<% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_campaign_finance_info_path(@campaign_finance_info) %> |
 <%= link_to 'Back', campaign_finance_infos_path %>
+
+<p><%= link_to "Download Report (PDF)", campaign_finance_info_path(@campaign_finance_info, format: "pdfs") %></p>

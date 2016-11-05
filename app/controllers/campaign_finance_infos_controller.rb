@@ -10,6 +10,16 @@ class CampaignFinanceInfosController < ApplicationController
   # GET /campaign_finance_infos/1
   # GET /campaign_finance_infos/1.json
   def show
+    @campaign_finance_info = CampaignFinanceInfo.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = CampaignFinanceInfoPdf.new(@campaign_finance_info)
+        send_data pdf.render, filename: "CampaignInfo.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
   # GET /campaign_finance_infos/new
