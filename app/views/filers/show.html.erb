@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Filer type:</strong>
+  <strong>Filer Type:</strong>
   <%= @filer.filer_type_id %>
 </p>
 
 <p>
   <strong>Address:</strong>
-  <%= @filer.address_id %>
+  <% for address in @filer.addresses do %>
+      <%= address.city %>
+  <% end %>
 </p>
 
 <p>

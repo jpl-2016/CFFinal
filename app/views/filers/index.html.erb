@@ -7,17 +7,17 @@
     <tr>
       <th>Filer type</th>
       <th>Address</th>
-      <th>Firstname</th>
-      <th>Mi</th>
-      <th>Lastname</th>
+      <th>First Name</th>
+      <th>Middle Initial</th>
+      <th>Last Name</th>
       <th>Phone</th>
-      <th>Ext</th>
-      <th>Releasepassword</th>
-      <th>Releasepasswordto</th>
-      <th>Emailpasswordto</th>
-      <th>Signature</th>
-      <th>Office held</th>
-      <th>Office sougth</th>
+      <th>Extension</th>
+      <th>Release Password</th>
+      <th>Password Released To</th>
+      <th>Password Emailed To</th>
+      <th>Electronic Signature</th>
+      <th>Office Held</th>
+      <th>Office Sougth</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -37,7 +37,7 @@
         <td><%= filer.emailpasswordto %></td>
         <td><%= filer.signature %></td>
         <td><%= filer.office_held_id %></td>
-        <td><%= filer.office_sougth_id %></td>
+        <td><%= filer.office_sought_id %></td>
         <td><%= link_to 'Show', filer %></td>
         <td><%= link_to 'Edit', edit_filer_path(filer) %></td>
         <td><%= link_to 'Destroy', filer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

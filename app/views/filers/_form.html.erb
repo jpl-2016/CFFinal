@@ -12,57 +12,63 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :filer_type_id %><br>
+    <%= f.label :filer_type_id, 'Filer Type' %><br>
     <%= f.collection_select :filer_type_id, FilerType.all, :id, :ftype %>
   </div>
   <div class="field">
-    <%= f.label :address_id %><br>
-    <%= f.number_field :address_id %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br>
+    <%= f.label :firstname, 'First Name' %><br>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :mi %><br>
+    <%= f.label :mi, 'Middle Initial' %><br>
     <%= f.text_field :mi %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
+    <%= f.label :lastname, 'Last Name' %><br>
     <%= f.text_field :lastname %>
   </div>
+
+  <div id="Address">
+     <%= f.fields_for :addresses do |address| %>
+        <%= render 'address_fields', f: address %>
+     <% end %>
+  <div class="links">
+     <%= link_to_add_association "Add Address", f,:addresses %>
+  </div>
+  </div></br>
+
   <div class="field">
-    <%= f.label :phone %><br>
+    <%= f.label :phone, 'Phone Number' %><br>
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :ext %><br>
+    <%= f.label :ext, 'Extension' %><br>
     <%= f.text_field :ext %>
   </div>
   <div class="field">
-    <%= f.label :releasepassword %><br>
+    <%= f.label :releasepassword, 'Do you want your password released?' %><br>
     <%= f.check_box :releasepassword %>
   </div>
   <div class="field">
-    <%= f.label :releasepasswordto %><br>
+    <%= f.label :releasepasswordto, 'To whom should we release your password to?' %><br>
     <%= f.text_field :releasepasswordto %>
   </div>
   <div class="field">
-    <%= f.label :emailpasswordto %><br>
+    <%= f.label :emailpasswordto, 'Email of whom you want your password released to?' %><br>
     <%= f.text_field :emailpasswordto %>
   </div>
   <div class="field">
-    <%= f.label :signature %><br>
-    <%= f.check_box :signature %>
-  </div>
-  <div class="field">
-    <%= f.label :office_held_id %><br>
+    <%= f.label :office_held_id, 'Office Held' %><br>
     <%= f.collection_select :office_held_id, OfficeHeld.all, :id, :category %>
   </div>
   <div class="field">
-    <%= f.label :office_sought_id %><br>
+    <%= f.label :office_sought_id, 'Office Sought' %><br>
     <%= f.collection_select :office_sought_id, OfficeSought.all, :id, :category %>
   </div>
+    <div class="field">
+      <%= f.label :signature,'Electronic Signature' %><br>
+      <%= f.check_box :signature %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

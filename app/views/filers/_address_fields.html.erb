@@ -1,0 +1,26 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label "State" %><br>
+    <%= f.collection_select :state_id, State.all, :id, :state %>
+  </div>
+  <div class="field">
+    <%= f.label "Address" %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label "Suite/Apt" %><br>
+    <%= f.text_field :suiteapt %>
+  </div>
+  <div class="field">
+    <%= f.label "City" %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label "Zipcode" %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label "Has you're address changed?" %><br>
+    <%= f.check_box :addresschange %>
+  </div>
+</div>

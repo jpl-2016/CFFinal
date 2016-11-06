@@ -19,6 +19,7 @@ class FilersController < ApplicationController
 
   # GET /filers/1/edit
   def edit
+
   end
 
   # POST /filers
@@ -61,6 +62,7 @@ class FilersController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_filer
@@ -69,6 +71,6 @@ class FilersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def filer_params
-      params.require(:filer).permit(:filer_type_id, :address_id, :firstname, :mi, :lastname, :phone, :ext, :releasepassword, :releasepasswordto, :emailpasswordto, :signature, :office_held_id, :office_sought_id)
+      params.require(:filer).permit(:filer_type_id, :address_id, :firstname, :mi, :lastname, :phone, :ext, :releasepassword, :releasepasswordto, :emailpasswordto, :signature, :office_held_id, :office_sought_id, addresses_attributes: [:id, :state_id, :address, :suiteapt, :city, :zipcode, :addresschange, :_destroy])
     end
 end

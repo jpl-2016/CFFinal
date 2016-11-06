@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105194254) do
+ActiveRecord::Schema.define(version: 20161106025641) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "state_id",      limit: 4
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20161105194254) do
     t.boolean  "addresschange"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "filer_id",      limit: 4
+    t.integer  "candidate_id",  limit: 4
   end
 
   create_table "campaign_finance_infos", force: :cascade do |t|

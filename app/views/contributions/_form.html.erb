@@ -19,10 +19,21 @@
     <%= f.label :contribution_type_id %><br>
     <%= f.collection_select :contribution_type_id, ContributionType.all, :id, :type %>
   </div>
+
   <div class="field">
-    <%= f.label :entity_id %><br>
-    <%= f.number_field :entity_id %>
+  <%= f.fields_for :entities do |entity_form| %>
+        <% entity_form.label :firstname, "First Name" %><br>
+        <%= entity_form.text_field :firstname %><br><br>
+  <% end %>
   </div>
+
+    <div class="field">
+      <%= f.fields_for :entities do |entity_form| %>
+          <% entity_form.label :lastname, "First Name" %><br>
+          <%= entity_form.text_field :lastname %><br><br>
+      <% end %>
+    </div>
+
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>

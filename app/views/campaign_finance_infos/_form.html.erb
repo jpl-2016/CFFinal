@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :report_type_id %><br>
-    <%= f.number_field :report_type_id %>
+    <%= f.collection_select :report_type_id, ReportType.all, :id, :rtype %>
   </div>
   <div class="field">
     <%= f.label :candidate_id %><br>
