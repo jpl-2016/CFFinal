@@ -69,6 +69,6 @@ class EntitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entity_params
-      params.require(:entity).permit(:entity_type_id, :prefix_id, :address_id, :firstname, :mi, :lastname, :suffix, :occupationtitle, :employer)
+      params.require(:entity).permit(:entity_type_id, :prefix_id, :address_id, :firstname, :mi, :lastname, :suffix, :occupationtitle, :employer, addresses_attributes: [:id, :state_id, :address, :suiteapt, :city, :zipcode, :addresschange, :_destroy])
     end
 end

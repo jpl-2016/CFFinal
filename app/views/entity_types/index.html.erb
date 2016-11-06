@@ -13,7 +13,7 @@
   <tbody>
     <% @entity_types.each do |entity_type| %>
       <tr>
-        <td><%= entity_type.type %></td>
+        <td><%= entity_type.entype %></td>
         <td><%= link_to 'Show', entity_type %></td>
         <td><%= link_to 'Edit', edit_entity_type_path(entity_type) %></td>
         <td><%= link_to 'Destroy', entity_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>

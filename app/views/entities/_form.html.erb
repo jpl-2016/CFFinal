@@ -13,16 +13,22 @@
 
   <div class="field">
     <%= f.label :entity_type_id %><br>
-    <%= f.number_field :entity_type_id %>
+    <%= f.collection_select :entity_type_id, EntityType.all, :id, :entype %>
   </div>
   <div class="field">
     <%= f.label :prefix_id %><br>
     <%= f.collection_select :prefix_id, Prefix.all, :id, :prefix %>
   </div>
-  <div class="field">
-    <%= f.label :address_id %><br>
-    <%= f.number_field :address_id %>
-  </div>
+    <div id="Address">
+      <%= f.fields_for :addresses do |address| %>
+          <%= render 'address_fields', f: address %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association "Add 2nd Address", f,:addresses %>
+      </div>
+    </div></br>
+
+
   <div class="field">
     <%= f.label :firstname %><br>
     <%= f.text_field :firstname %>

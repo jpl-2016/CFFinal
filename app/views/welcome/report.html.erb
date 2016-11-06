@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>accordion demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<div id="accordion">
+  <h3>Candidate Information</h3>
+  <div>
+    <h3>Candidate/Office Holder Information</h3>
+    <%= form_for CampaignFinanceInfo.new do |f| %>
+        <div class="field">
+          <%= f.label :filer_id %><br>
+          <%= f.collection_select :filer_id, Filer.all, :id, :firstname %>
+        </div>
+        <div class="field">
+          <%= f.label :report_type_id %><br>
+          <%= f.collection_select :report_type_id, ReportType.all, :id, :rtype %>
+        </div>
+        <div class="field">
+          <%= f.label :candidate_id %><br>
+          <%= f.number_field :candidate_id %>
+        </div>
+        <div class="field">
+          <%= f.label :treasurer_id %><br>
+          <%= f.number_field :treasurer_id %>
+        </div>
+        <div class="field">
+          <%= f.label :election_type_id %><br>
+          <%= f.collection_select :election_type_id, ElectionType.all, :id, :ectype %>
+        </div>
+        <div class="field">
+          <%= f.label :submitdate %><br>
+          <%= f.date_select :submitdate %>
+        </div>
+        <div class="field">
+          <%= f.label :filename %><br>
+          <%= f.text_field :filename %>
+        </div>
+        <div class="field">
+          <%= f.label :campaignyear %><br>
+          <%= f.text_field :campaignyear %>
+        </div>
+        <div class="field">
+          <%= f.label :ontime %><br>
+          <%= f.check_box :ontime %>
+        </div>
+        <div class="field">
+          <%= f.label :periodbegin %><br>
+          <%= f.date_select :periodbegin %>
+        </div>
+        <div class="field">
+          <%= f.label :periodend %><br>
+          <%= f.date_select :periodend %>
+        </div>
+        <div class="field">
+          <%= f.label :electiondate %><br>
+          <%= f.date_select :electiondate %>
+        </div>
+
+        <%= f.fields_for :contributions do |builder| %>
+            <fieldset>
+              <%= builder.label :content, "Contribution" %><br />
+              <%= builder.text_area :content %>
+            </fieldset>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+  </div>
+  <h3>Notice from Committees</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Contributions</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Expenditures</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Loans</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Payment From Political Contribution to a Business of C/OH</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Interest Earned, Other Credits/Gains/Refunds, And Purchase of Investments</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Travel</h3>
+  <div>
+    <p>Sed non urna. Phasellus eu ligula. Vestibulum sit amet purus.
+      Vivamus hendrerit, dolor aliquet laoreet, mauris turpis velit,
+      faucibus interdum tellus libero ac justo.</p>
+  </div>
+  <h3>Section 3</h3>
+  <div>
+    <h1>New Entity Type</h1>
+
+
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $( "#accordion" ).accordion();
+</script>
+
+</body>
+</html>

@@ -19,14 +19,14 @@
     <%= f.label :contribution_type_id %><br>
     <%= f.collection_select :contribution_type_id, ContributionType.all, :id, :type %>
   </div>
-
+First Name
   <div class="field">
   <%= f.fields_for :entities do |entity_form| %>
         <% entity_form.label :firstname, "First Name" %><br>
         <%= entity_form.text_field :firstname %><br><br>
   <% end %>
   </div>
-
+Last Name
     <div class="field">
       <%= f.fields_for :entities do |entity_form| %>
           <% entity_form.label :lastname, "First Name" %><br>

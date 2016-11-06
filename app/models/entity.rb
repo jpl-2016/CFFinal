@@ -9,5 +9,6 @@ class Entity < ActiveRecord::Base
   has_many :loans
   has_many :travelers
 
-  validates_presence_of :firstname
+  accepts_nested_attributes_for :address, allow_destroy: true, reject_if: :all_blank
+
 end
