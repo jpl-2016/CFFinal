@@ -69,6 +69,6 @@ class ContributionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contribution_params
-      params.require(:contribution).permit(:campaign_finance_info_id, :contribution_type_id, :entity_id, :date, :amount, :description, :isoutofstatepac, :pacid, :istraveloutsideoftx)
+      params.require(:contribution).permit(:campaign_finance_info_id, :contribution_type_id, :entity_id, :date, :amount, :description, :isoutofstatepac, :pacid, :istraveloutsideoftx, addresses_attributes: [:id, :state_id, :address, :suiteapt, :city, :zipcode, :addresschange, :_destroy], entities_attributes: [:id, :prefix_id, :address_id, :firstname, :mi, :lastname, :suffix, :occupationtitle, :employer, :_destroy])
     end
 end

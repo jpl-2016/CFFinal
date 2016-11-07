@@ -1,73 +1,216 @@
-<%= form_for(@campaign_finance_info) do |f| %>
-  <% if @campaign_finance_info.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@campaign_finance_info.errors.count, "error") %> prohibited this campaign_finance_info from being saved:</h2>
+<div class="container demo">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingOne">
+     <h4 class="panel-title">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <i class="more-less glyphicon glyphicon-plus"></i>
+         General Campaign Information
+      </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <%= form_for(@campaign_finance_info) do |f| %>
+              <% if @campaign_finance_info.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@campaign_finance_info.errors.count, "error") %> prohibited this campaign_finance_info from being saved:</h2>
 
-      <ul>
-      <% @campaign_finance_info.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                    <ul>
+                      <% @campaign_finance_info.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+              <% end %>
 
-  <div class="field">
-    <%= f.label :filer_id %><br>
-    <%= f.collection_select :filer_id, Filer.all, :id, :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :report_type_id %><br>
-    <%= f.collection_select :report_type_id, ReportType.all, :id, :rtype %>
-  </div>
-  <div class="field">
-    <%= f.label :candidate_id %><br>
-    <%= f.number_field :candidate_id %>
-  </div>
-  <div class="field">
-    <%= f.label :treasurer_id %><br>
-    <%= f.number_field :treasurer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :election_type_id %><br>
-    <%= f.collection_select :election_type_id, ElectionType.all, :id, :ectype %>
-  </div>
-  <div class="field">
-    <%= f.label :submitdate %><br>
-    <%= f.date_select :submitdate %>
-  </div>
-  <div class="field">
-    <%= f.label :filename %><br>
-    <%= f.text_field :filename %>
-  </div>
-  <div class="field">
-    <%= f.label :campaignyear %><br>
-    <%= f.text_field :campaignyear %>
-  </div>
-  <div class="field">
-    <%= f.label :ontime %><br>
-    <%= f.check_box :ontime %>
-  </div>
-  <div class="field">
-    <%= f.label :periodbegin %><br>
-    <%= f.date_select :periodbegin %>
-  </div>
-  <div class="field">
-    <%= f.label :periodend %><br>
-    <%= f.date_select :periodend %>
-  </div>
-  <div class="field">
-    <%= f.label :electiondate %><br>
-    <%= f.date_select :electiondate %>
-  </div>
+              <div class="field">
+                <%= f.label :filer_id %><br>
+                <%= f.collection_select :filer_id, Filer.all, :id, :firstname %>
+              </div>
+              <div class="field">
+                <%= f.label :report_type_id %><br>
+                <%= f.collection_select :report_type_id, ReportType.all, :id, :rtype %>
+              </div>
+              <div class="field">
+                <%= f.label :candidate_id %><br>
+                <%= f.number_field :candidate_id %>
+              </div>
+              <div class="field">
+                <%= f.label :treasurer_id %><br>
+                <%= f.number_field :treasurer_id %>
+              </div>
+              <div class="field">
+                <%= f.label :election_type_id %><br>
+                <%= f.collection_select :election_type_id, ElectionType.all, :id, :ectype %>
+              </div>
+              <div class="field">
+                <%= f.label :submitdate %><br>
+                <%= f.date_select :submitdate %>
+              </div>
+              <div class="field">
+                <%= f.label :filename %><br>
+                <%= f.text_field :filename %>
+              </div>
+              <div class="field">
+                <%= f.label :campaignyear %><br>
+                <%= f.text_field :campaignyear %>
+              </div>
+              <div class="field">
+                <%= f.label :ontime %><br>
+                <%= f.check_box :ontime %>
+              </div>
+              <div class="field">
+                <%= f.label :periodbegin %><br>
+                <%= f.date_select :periodbegin %>
+              </div>
+              <div class="field">
+                <%= f.label :periodend %><br>
+                <%= f.date_select :periodend %>
+              </div>
+              <div class="field">
+                <%= f.label :electiondate %><br>
+                <%= f.date_select :electiondate %>
+              </div>
+              </div>
+              </div>
+              </div>
 
-    <%= f.fields_for :contributions do |builder| %>
-    <fieldset>
-      <%= builder.label :content, "Contribution" %><br />
-      <%= builder.text_area :content %>
-    </fieldset>
-    <% end %>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Notice from Committees
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Contributions
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <div class="field">
+                      <%= f.label :contributioncheck, 'Not Applicable' %><br>
+                      <%= f.check_box :contributioncheck %><p>(By checking the box, you are indicating that you are intentionally leaving this form blank.)</p>
+                    </div>
+                    <div id="Contributions">
+                      <%= f.fields_for :contributions do |contribution| %>
+                          <%= render 'contribution_fields', f: contribution %>
+                      <% end %>
+                      <div class="links">
+                        <%= link_to_add_association "Add Contribution", f,:contributions %>
+                      </div>
+                    </div></br>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Expenditures
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+                    <div id="Exppenditures">
+                      <%= f.fields_for :expenditures do |expenditure| %>
+                          <%= render 'expenditure_fields', f: expenditure %>
+                      <% end %>
+                      <div class="links">
+                        <%= link_to_add_association "Add Expenditure", f,:expenditures %>
+                      </div>
+                    </div></br>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Loans
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Payment From Political Contribution to a Business of C/OH
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingSeven">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Interest Earned, Other Credits/Gains/Refunds, And Purchase of Investments
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingEight">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                      <i class="more-less glyphicon glyphicon-plus"></i>
+                      Travel
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                  <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+              </div><!-- panel-group -->
+
+
+              </div><!-- container -->
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+          <% end %>

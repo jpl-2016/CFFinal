@@ -79,6 +79,6 @@ class CampaignFinanceInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_finance_info_params
-      params.require(:campaign_finance_info).permit(:filer_id, :report_type_id, :candidate_id, :treasurer_id, :election_type_id, :submitdate, :filename, :campaignyear, :ontime, :periodbegin, :periodend, :electiondate)
+      params.require(:campaign_finance_info).permit(:filer_id, :report_type_id, :candidate_id, :treasurer_id, :election_type_id, :submitdate, :filename, :campaignyear, :ontime, :periodbegin, :periodend, :electiondate, :contributioncheck, contributions_attributes: [:id, :contribution_type_id, :entity_id, :date, :amount, :description, :isoutofstatepac, :pacid, :istraveloutsideoftx, :destroy], addresses_attributes: [:id, :state_id, :address, :suiteapt, :city, :zipcode, :addresschange, :_destroy], entities_attributes: [:id, :prefix_id, :address_id, :firstname, :mi, :lastname, :suffix, :occupationtitle, :employer, :_destroy], expenditure_attributes: [:id, :entity_id, :expend_type_id, :expend_category_id, :payment_method_id, :date, :amount, :description, :istraveloutsideoftx, :isaustintxlivingexpense, :isbenefitcoh, :isreimbursementintended, :_destroy])
     end
 end

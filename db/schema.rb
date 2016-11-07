@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106034701) do
+ActiveRecord::Schema.define(version: 20161107032908) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "state_id",      limit: 4
@@ -27,20 +27,22 @@ ActiveRecord::Schema.define(version: 20161106034701) do
   end
 
   create_table "campaign_finance_infos", force: :cascade do |t|
-    t.integer  "filer_id",         limit: 4
-    t.integer  "report_type_id",   limit: 4
-    t.integer  "candidate_id",     limit: 4
-    t.integer  "treasurer_id",     limit: 4
-    t.integer  "election_type_id", limit: 4
+    t.integer  "filer_id",          limit: 4
+    t.integer  "report_type_id",    limit: 4
+    t.integer  "candidate_id",      limit: 4
+    t.integer  "treasurer_id",      limit: 4
+    t.integer  "election_type_id",  limit: 4
     t.date     "submitdate"
-    t.string   "filename",         limit: 4000
-    t.string   "campaignyear",     limit: 4000
+    t.string   "filename",          limit: 4000
+    t.string   "campaignyear",      limit: 4000
     t.boolean  "ontime"
     t.date     "periodbegin"
     t.date     "periodend"
     t.date     "electiondate"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "contribution_id",   limit: 4
+    t.boolean  "contributioncheck"
   end
 
   create_table "candidates", force: :cascade do |t|

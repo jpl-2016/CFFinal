@@ -10,6 +10,5 @@ class CampaignFinanceInfo < ActiveRecord::Base
   has_many :loans
 
   accepts_nested_attributes_for :contributions
-  validates_presence_of :filename
-
+  accepts_nested_attributes_for :expenditures
 end
