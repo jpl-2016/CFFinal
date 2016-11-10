@@ -33,5 +33,7 @@
 </table>
 
 <br>
-
+<br>
+<%= button_to 'Export List', {:action => 'export_yml'}, {:method => :post} %>
+<br>
 <%= link_to 'New Address', new_address_path %>

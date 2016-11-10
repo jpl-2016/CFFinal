@@ -1,0 +1,39 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :campaign_finance_info_id %><br>
+    <%= f.number_field :campaign_finance_info_id %>
+  </div>
+  <div id="Entity">
+    <%= f.fields_for :entities do |entity| %>
+        <%= render 'entity_fields', f: entity %>
+    <% end %>
+  </div></br>
+  <div class="field">
+    <%= f.label :expend_category_id %><br>
+    <%= f.collection_select :expend_category_id, ExpendCategory.all, :id, :category %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :istraveloutsideoftx %><br>
+    <%= f.check_box :istraveloutsideoftx %>
+  </div>
+  <div class="field">
+    <%= f.label :isaustintxlivingexpense %><br>
+    <%= f.check_box :isaustintxlivingexpense %>
+  </div>
+  <div class="field">
+    <%= f.label :isbenefitcoh %><br>
+    <%= f.check_box :isbenefitcoh %>
+  </div>
+</div>

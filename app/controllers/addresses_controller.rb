@@ -61,6 +61,27 @@ class AddressesController < ApplicationController
     end
   end
 
+  def export_yml
+
+    require 'yaml'
+
+    @hash = ActiveRecord::Base.connection.exec_query('SELECT * FROM addresses')
+    output = File.new('adinfo.yml', 'w')
+
+    @hash.each do |row|
+      @address = {'Address_id' => row['address_id'], 'Address' => row['address'], 'SuiteApt' => row['suiteapt'], 'City' => row['city'], 'Zipcode' => row['zipcode'], 'AddressChange' => row['addresschange']}
+      output.puts YAML.dump(@address)
+    end
+
+    output.close
+
+    flash[:notice] = 'You have successfully exported form.'
+    redirect_to root_url
+
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address

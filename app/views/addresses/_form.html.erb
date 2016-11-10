@@ -35,6 +35,10 @@
     <%= f.label :addresschange %><br>
     <%= f.check_box :addresschange %>
   </div>
+    <br>
+    <%= button_to 'Export List', {:action => 'export_yml'}, {:method => :post} %>
+    <br>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

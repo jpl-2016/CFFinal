@@ -1,3 +1,4 @@
+<%= bootstrap_form_for(@campaign_finance_info, layout: :inline) do |f| %>
 <div class="container demo">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 <div class="panel panel-default">
@@ -25,7 +26,7 @@
               <% end %>
 
               <div class="field">
-                <%= f.label :filer_id %><br>
+                <%= f.label :filer_id, size:"25x2" %><br>
                 <%= f.collection_select :filer_id, Filer.all, :id, :firstname %>
               </div>
               <div class="field">
@@ -54,7 +55,7 @@
               </div>
               <div class="field">
                 <%= f.label :campaignyear %><br>
-                <%= f.text_field :campaignyear %>
+                <%= f.text_field :campaignyear, size: "30x2" %>
               </div>
               <div class="field">
                 <%= f.label :ontime %><br>
@@ -130,7 +131,7 @@
                 </div>
                 <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                   <div class="panel-body">
-                    <div id="Exppenditures">
+                    <div id="Expenditures">
                       <%= f.fields_for :expenditures do |expenditure| %>
                           <%= render 'expenditure_fields', f: expenditure %>
                       <% end %>
@@ -153,7 +154,14 @@
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <div id="Loans">
+                      <%= f.fields_for :loans do |loan| %>
+                          <%= render 'loan_fields', f: loan %>
+                      <% end %>
+                      <div class="links">
+                        <%= link_to_add_association "Add Loan", f,:loans %>
+                      </div>
+                    </div></br>
                   </div>
                 </div>
               </div>
@@ -169,7 +177,14 @@
                 </div>
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                   <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <div id="Payments to COH">
+                      <%= f.fields_for :coh_payments do |coh_payment| %>
+                          <%= render 'coh_payment_fields', f: coh_payment %>
+                      <% end %>
+                      <div class="links">
+                        <%= link_to_add_association "Add Payment", f,:coh_payments %>
+                      </div>
+                    </div></br>
                   </div>
                 </div>
               </div>
@@ -185,7 +200,14 @@
                 </div>
                 <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
                   <div class="panel-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <div id="Payments to COH">
+                      <%= f.fields_for :investment_purchases do |investment_purchase| %>
+                          <%= render 'investment_purchase_fields', f: investment_purchase %>
+                      <% end %>
+                      <div class="links">
+                        <%= link_to_add_association "Add Purchase", f,:investment_purchases %>
+                      </div>
+                    </div></br>
                   </div>
                 </div>
               </div>
@@ -208,9 +230,28 @@
 
               </div><!-- panel-group -->
 
+              <br>
+              <%= f.submit 'Export',name: "export" %>
+              <br>
+              </div>
 
-              </div><!-- container -->
+
+              <!-- container -->
+
+
+              <div class="col-xs-4">
+
+                <div class="form-group">
+
+                  <label class="control-label">A file upload button without icon</label>
+
+                  <input type="file" class="filestyle" data-icon="false">
+
+                </div>
+
+              </div>
               <div class="actions">
-                <%= f.submit %>
+                <%= f.submit "Submit", name: 'submit' %>
               </div>
           <% end %>
+<% end %>

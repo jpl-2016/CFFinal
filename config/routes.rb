@@ -31,11 +31,21 @@ Rails.application.routes.draw do
   resources :filers
   devise_for :users
   resources :filer_types
+
+  resources :campaign_finance_infos do
+    post :export_yml, :on => :collection
+  end
+
+  resources :addresses do
+    post :export_yml, :on => :collection
+  end
+
+  get '/users', to: redirect('/welcome/report')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+   root 'welcome#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
