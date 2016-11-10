@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110144257) do
+ActiveRecord::Schema.define(version: 20161110232945) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "state_id",      limit: 4
@@ -27,23 +27,30 @@ ActiveRecord::Schema.define(version: 20161110144257) do
   end
 
   create_table "campaign_finance_infos", force: :cascade do |t|
-    t.integer  "filer_id",          limit: 4
-    t.integer  "report_type_id",    limit: 4
-    t.integer  "candidate_id",      limit: 4
-    t.integer  "treasurer_id",      limit: 4
-    t.integer  "election_type_id",  limit: 4
+    t.integer  "filer_id",               limit: 4
+    t.integer  "report_type_id",         limit: 4
+    t.integer  "candidate_id",           limit: 4
+    t.integer  "treasurer_id",           limit: 4
+    t.integer  "election_type_id",       limit: 4
     t.date     "submitdate"
-    t.string   "filename",          limit: 4000
-    t.string   "campaignyear",      limit: 4000
+    t.string   "filename",               limit: 4000
+    t.string   "campaignyear",           limit: 4000
     t.boolean  "ontime"
     t.date     "periodbegin"
     t.date     "periodend"
     t.date     "electiondate"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "contribution_id",   limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "contribution_id",        limit: 4
     t.boolean  "contributioncheck"
-    t.integer  "user_id",           limit: 4
+    t.integer  "user_id",                limit: 4
+    t.integer  "expenditure_id",         limit: 4
+    t.integer  "travel_id",              limit: 4
+    t.integer  "coh_payment_id",         limit: 4
+    t.integer  "investment_purchase_id", limit: 4
+    t.integer  "credit_id",              limit: 4
+    t.integer  "loan_id",                limit: 4
+    t.integer  "committee_notice_id",    limit: 4
   end
 
   create_table "candidates", force: :cascade do |t|
